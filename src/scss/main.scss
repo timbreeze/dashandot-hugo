@@ -1,0 +1,334 @@
+// Variables
+// Colors, transitions, padding, whatever here
+$black:  rgba(6, 10, 14, 1);
+
+// Legacy mixins certain functions like font-sizing fallbacks
+// @import '_mixins.scss';
+
+// Vendor
+// SCSS libraries for things like sliders etc.
+@import 'imports/normalize';
+// @import 'vendor/slick.scss';
+// @import 'vendor/slick-theme.scss';
+// @import 'vendor/_angled-edges.scss';
+// @import 'vendor/_burger.scss';
+
+// Globals
+// For bigger projects where typography, buttons, etc. need to be broken up for management.
+// @import '_typography.scss';ddd
+
+// Modules
+// Specific individual elements of a website - a card used on several pages
+// @import 'modules/_module.scss';
+
+// Layout
+// Definitions of page layout, & the layout of modules / elements in those pages
+// @import 'layout/_layout.scss';
+
+
+* {
+    box-sizing: border-box;
+    font-family: 'National 2 Test', sans-serif;
+    font-weight: 400
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+.full-wrapper {
+    height: 100%;
+    position: relative;
+    z-index: 1
+}
+
+.left {
+    height: inherit;
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+}
+
+.left__content, .right__content {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+
+}
+
+@media screen and (min-width:640px) {
+    .left {
+        width: 50%;
+        float: left;
+    }
+    .left__content {
+        padding: 64px;
+    }
+}
+
+.right {
+    background-image: url("../img/office-social-230418.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center left;
+    filter: grayscale(100%);
+}
+
+@media screen and (min-width:640px) {
+    .right {
+        width: 50%;
+        height: inherit;
+        float: right;
+    }
+}
+
+.morse-icon {
+    display: block;
+    float: left;
+    background-color: rgba(6, 10, 14, .92);
+    height: 8px
+}
+
+.morse-icon--long {
+    width: 48px
+}
+
+.morse-icon--short {
+    width: 8px;
+    margin-left: 8px
+}
+
+ul.portfolio {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+ul.portfolio>li {
+    margin: 16px 0
+}
+
+ul.portfolio>li a {
+    padding: 12px 0;
+    text-decoration: none;
+    color: rgba(6, 10, 14, .8);
+    font-size: 24px;
+    transition: cubic-bezier(.645, .045, .355, 1) .3s
+}
+
+ul.portfolio>li a:focus,
+ul.portfolio>li a:hover {
+    transition: cubic-bezier(.645, .045, .355, 1) .3s
+}
+
+.contact-us,
+.contact-us:focus,
+.contact-us:hover {
+    transition: cubic-bezier(.645, .045, .355, 1) .3s
+}
+
+@media screen and (min-width:640px) {
+    ul.portfolio>li a {
+        font-size: calc(50vw / 20)
+    }
+}
+
+.contact-us {
+    font-size: 18px;
+    text-decoration: none;
+    color: rgba(6, 10, 14, .4);
+    transition: cubic-bezier(.645, .045, .355, 1) .3s
+}
+
+.contact-us:focus,
+.contact-us:hover {
+    color: rgba(6, 10, 14, .92);
+    transition: cubic-bezier(.645, .045, .355, 1) .3s
+}
+
+.social>li a,
+.social>li a:hover {
+    transition: cubic-bezier(.645, .045, .355, 1) .3s
+}
+
+.social {
+    list-style: none;
+    padding: 0;
+}
+
+.social>li {
+    float: left;
+    margin: 0 32px 0 0;
+    padding: 0
+}
+
+.social>li:last-child {
+    margin: 0
+}
+
+.social>li a {
+    color: rgba(6, 10, 14, .23);
+    transition: cubic-bezier(.645, .045, .355, 1) .3s
+}
+
+.social>li a:hover {
+    color: #fff;
+    transition: cubic-bezier(.645, .045, .355, 1) .3s
+}
+
+.morse-move,
+.morse-move:after {
+    transition: cubic-bezier(.645, .045, .355, 1) .3s
+}
+
+@media screen and (min-width:520px) {
+    .contact-us {
+        font-size: 14px;
+    }
+    .social {
+
+        list-style: none;
+        padding: 0;
+        margin: auto 0 0 auto;
+        z-index: 2
+    }
+    .social>li {
+        float: left;
+        margin: 0 32px 0 0;
+        padding: 0
+    }
+}
+
+.morse-move:after,
+.morse-move:hover:after {
+    content: '';
+    background-color: rgba(6, 10, 14, .92);
+    height: 16px;
+    bottom: 16px;
+    left: 0;
+    opacity: .4
+}
+
+.morse-move {
+    position: relative;
+    transition: cubic-bezier(.645, .045, .355, 1) .3s
+}
+
+.morse-move:after {
+    position: absolute;
+    width: 0;
+    transition: cubic-bezier(.645, .045, .355, 1) .3s;
+    animation: spreadOut .3s;
+    transform-origin: 0 50%
+}
+
+#uc,
+.morse-move:hover:after {
+    position: absolute;
+    transition: cubic-bezier(.645, .045, .355, 1) .3s
+}
+
+.morse-move:hover:after {
+    width: 100%;
+    transition: cubic-bezier(.645, .045, .355, 1) .3s;
+    animation: spreadIn .6s;
+    transform-origin: 0 50%
+}
+
+@keyframes spreadIn {
+    from {
+        transform: scaleX(0)
+    }
+    to {
+        transform: scaleX(1)
+    }
+}
+
+
+@keyframes spreadOut {
+    from {
+        transform: scaleX(1)
+    }
+    to {
+        transform: scaleX(0)
+    }
+}
+
+
+#wrap {
+    z-index: 1;
+    opacity: 0;    
+    animation: popIn 100ms ease 750ms forwards;
+}
+
+@keyframes popIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.loader {
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $black;
+    transform: translateX(-100%); 
+    opacity: 0;
+    animation: slideInLeftOffRight 1500ms cubic-bezier(.645, .045, .355, 1) forwards;
+    &:after {
+        content: 'Hey 👋';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 5;
+        color: rgba(255, 255, 255, 0.92);
+    }
+}
+
+@keyframes slideInLeftOffRight {
+    0% {
+        opacity: 1;
+        transform: translateX(-100%); 
+    }
+    40% {
+        transform: translateX(0%); 
+    }
+    50% {
+        transform: translateX(0%); 
+    }
+    90% {
+        transform: translateX(100%); 
+    }
+    99% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100%);         
+    }
+}
+
+@keyframes slideOffRight {
+    to {
+        transform: translateX(100%)
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
