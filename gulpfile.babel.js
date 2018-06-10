@@ -92,7 +92,7 @@ gulp.task("js", (cb) => {
 // Compress images and svg
 gulp.task("img", () => {
   gulp
-    .src("./src/img/*.{png,jpg,gif,svg}")
+    .src("./src/img/*/*.{png,jpg,gif,svg}")
     .pipe(
       imagemin({
         progressive: true,
