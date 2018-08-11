@@ -1,6 +1,8 @@
 // Variables
 // Colors, transitions, padding, whatever here
 $black:  rgba(6, 10, 14, 1);
+$white: #ffffff;
+$white-half: rgba($white, 0.62);
 
 // Legacy mixins certain functions like font-sizing fallbacks
 // @import '_mixins.scss';
@@ -32,12 +34,24 @@ $black:  rgba(6, 10, 14, 1);
     font-weight: 400
 }
 
+
 body,
 html {
     width: 100%;
     height: 100%;
     overflow: hidden;
     margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0.25em 0;
+    color: $black;
+}
+
+p {
+   font-size: 1rem;
+   line-height: 150%;
+   color: $black;
 }
 
 .full-wrapper {
@@ -330,5 +344,147 @@ ul.portfolio>li a:hover {
     }
     to {
         opacity: 1
+    }
+}
+
+
+.support {
+    // overflow-y: scroll;
+    overflow: auto;
+    overflow-x: hidden;
+    &__introduction {
+        padding-right: 2em;
+    }
+    & .left,
+    & .right {
+        width: 100%;
+    }
+    & .left {
+        height: 60vh;
+        min-height: 30em;
+    }
+    & .left__content {
+        height: 100%;
+    }
+    & .right--support {
+        height: auto;
+        background-image: none;
+        background-color: $black;
+    }
+    &__packages {
+        padding: 4em 2em;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 40em) {
+    .support {
+        &__packages {
+            padding: 4em;
+        }
+    }
+}
+@media screen and (min-width: 60em) {
+    .support {
+        &__introduction {
+            padding-right: 4em;
+        }
+        & .left,
+        & .right {
+            width: 50%;
+        }
+        & .left {
+            height: 100%;
+        }
+    }
+}
+@media screen and (min-width: 90em) {
+    .support {
+        &__packages {
+            padding: 8em;
+        }
+
+        & .left__content {
+            position: fixed;
+            height: 100vh;
+            width: 50vw;
+        }
+    }
+}
+
+.package {
+    &__item {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        color: $white;
+        font-size: 0.8rem;
+        margin-bottom: 6em;
+        padding-left: 2em;
+    }
+
+    &__pricing {
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 8em;
+        text-align: left;
+        margin-top: 1em;
+    }
+    &__price {
+        color: $white;
+        font-size: 2.4rem;
+        line-height: 1;
+        margin: 0;
+    }
+    &__month {
+        color: $white;
+        line-height: 1;
+        margin: 0;
+    }
+    &__year {
+        width: 100%;
+        color: $white-half;
+        font-size: 0.8rem;
+    }
+
+
+    &__title {
+        font-size: 1.2rem;
+        color: inherit;
+        margin-bottom: 0.8em;
+    }
+    &__details {
+        list-style: square;
+        margin: 0;
+        padding: 0;
+        & li {
+            line-height: 1.5;
+            margin-bottom: 1.6em;
+            & span {
+                margin-top: 0.2em;
+                display: block;
+                color: $white-half;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 40em) {
+    .package {
+        &__item {
+            flex-direction: row;
+            padding-left: 0;
+        }
+        &__pricing {
+            text-align: center;
+            order: 0;
+            margin-top: 0;
+        }
+        &__content {
+            padding-left: 4em;
+        }
     }
 }
