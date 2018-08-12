@@ -6,7 +6,7 @@
     <base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ $.Site.BaseURL }}{{ end }}">
     <title>{{ .Title }} | {{ $.Site.Title }}</title>
     <!-- Meta -->
-    <link rel="canonical" href="//dashandot.co.uk/">
+    <link rel="canonical" href="{{ .Permalink }}">
     <meta name="description" content="Dash&amp;Dot is a full-service design &amp; development agency. Based in Herefordshire, we combine design &amp; strategy to deliver brand experiences that connect with users in compelling ways.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Tim Breeze">
