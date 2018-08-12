@@ -6,7 +6,7 @@
     <base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ $.Site.BaseURL }}{{ end }}">
     <title>{{ .Title }} | {{ $.Site.Title }}</title>
     <!-- Meta -->
-    <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="canonical" href="https://dashandot.co.uk{{ .Permalink }}">
     <meta name="description" content="Dash&amp;Dot is a full-service design &amp; development agency. Based in Herefordshire, we combine design &amp; strategy to deliver brand experiences that connect with users in compelling ways.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Tim Breeze">
@@ -48,8 +48,8 @@
         "@context": "http://schema.org",
         "@type": "Organization",
         "url": "https://dashandot.co.uk/",
-        "name": "Dash&Dot",
-        "logo": "https://dashandot.co.uk/img/apple-icon-180x180.png",
+        "name": "Dash&amp;Dot",
+        "logo": "https://dashandot.co.uk/favicon/img/apple-icon-180x180.png",
         "address":
         [
           {
