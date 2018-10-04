@@ -278,7 +278,8 @@ ul.portfolio>li a:hover {
 #wrap {
     z-index: 1;
     opacity: 0;    
-    animation: popIn 100ms ease 750ms forwards;
+    // animation: popIn 100ms ease 750ms forwards;
+    animation: fadeIn 1000ms cubic-bezier(.645, .045, .355, 1) 500ms forwards;
 }
 
 @keyframes popIn {
@@ -340,10 +341,10 @@ ul.portfolio>li a:hover {
     }
 }
 @keyframes fadeIn {
-    from {
+    0% {
         opacity: 0;
     }
-    to {
+    100% {
         opacity: 1;
     }
 }
@@ -351,8 +352,17 @@ ul.portfolio>li a:hover {
     0% {
         opacity: 1;
     }
+    99% {
+        opacity: 0;
+        display: block;
+        visibility: visible;
+        z-index: 5;
+    }
     100% {
         opacity: 0;
+        display: none;
+        visibility: hidden;
+        z-index: -99999;
     }
 }
 
