@@ -1,4 +1,10 @@
 // JS Goes here - ES6 supported
+function darkMode() {
+  var t = (new Date()).getHours();
+  var b = document.querySelector("body");
 
-// Say hello
-console.log("🦊 Hello! Edit me in src/js/app.js");
+  if (t >= 16 || t <= 8) {
+    b.classList.add("is-night");
+  }
+}
+darkMode();

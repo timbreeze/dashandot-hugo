@@ -507,3 +507,46 @@ ul.portfolio>li a:hover {
         }
     }
 }
+
+@mixin n-bg {
+    background-color: #171B1F;
+} 
+
+@mixin n-bg-w {
+    background-color: rgba(255, 255, 255, 0.92);
+} 
+
+@mixin n-t {
+    color: rgba(255, 255, 255, 0.92) !important;
+} 
+
+.is-night {
+    @include n-bg;
+
+    & .right {
+        background-image: url("../img/office-social-night-230418.jpg");
+    }
+
+    & .full-wrapper .left {
+        @include n-bg;
+        @include n-t;
+    }
+    
+    & .morse-icon {
+        @include n-bg-w;
+    }
+
+    & a {
+        @include n-t;
+
+        &:hover,
+        &:focus {
+            color: $white-half;
+        }
+    }
+
+    & .morse-move:after, 
+    & .morse-move:hover:after {
+        background-color: $white-half;
+    }
+}
