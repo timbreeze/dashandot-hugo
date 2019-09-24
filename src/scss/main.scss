@@ -303,7 +303,7 @@ ul.portfolio>li a:hover {
     animation: fadeOut 1500ms cubic-bezier(.645, .045, .355, 1) forwards;
     &:after {
         // content: 'Hey 👋';
-        content: 'Welcome to Dash&Dot.';
+        content: 'Welcome.';
         position: absolute;
         top: 50%;
         left: calc(50% - 80px);
